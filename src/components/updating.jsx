@@ -1,3 +1,10 @@
+import { Form } from "react-router-dom";
+
 export default function Updating() {
-    return(<></>)
+    return (<>
+        <Form>
+            { }
+            <button> עדכן </button>
+        </Form>
+    </>)
 }

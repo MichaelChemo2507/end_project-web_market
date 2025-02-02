@@ -1,3 +1,9 @@
+import {Form} from 'react-router-dom'
 export default function Adding() {
-    return(<></>)
+    return (<>
+        <Form >
+            { }
+            <button> הוסף </button>
+        </Form>
+    </>)
 }
