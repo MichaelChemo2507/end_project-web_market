@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Store from "./srote";
 import Admin from "./admin";
 import CashRegister from "./cashRegister";
-import ShopingCart from "./shopingCart";
+import ShoppingCart from "./shoppingCart";
 import Adding from "./adding";
 import Updating from "./updating";
 import MainPage from "./mainPage";
@@ -36,8 +36,8 @@ export default function Routs() {
           element: <CashRegister></CashRegister>,
         },
         {
-          path: "/shopingCart",
-          element: <ShopingCart></ShopingCart>,
+          path: "/shoppingCart",
+          element: <ShoppingCart></ShoppingCart>,
         },
       ],
     },

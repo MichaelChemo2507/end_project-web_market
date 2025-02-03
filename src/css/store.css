@@ -9,7 +9,21 @@
       height: 250px;
       border: solid black 1px;
       margin: 10px;
+      display: grid;
+      grid-template-rows: 5fr 1fr 1fr 1fr 1fr;
+      text-align: center;
   }
+
+
+
+
+
+
+
+
+
+
+
   .mainSection::-webkit-scrollbar {
     width: 10px;
   }

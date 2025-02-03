@@ -1,4 +1,4 @@
-export const productsData = [
+export let productsData = [
   {
     productCode: "P001",
     photoUrl: "product1.jpg",

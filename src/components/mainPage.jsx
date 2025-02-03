@@ -11,7 +11,7 @@ export default function MainPage() {
           <Link to="/" className="navBarLinks">
             דף הבית
           </Link>
-          <Link to="/shopingCart" className="navBarLinks">
+          <Link to="/shoppingCart" className="navBarLinks">
             סל קניות
           </Link>
         </header>
