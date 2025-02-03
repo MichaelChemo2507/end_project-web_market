@@ -1,6 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
 import "../css/mainPage.css";
-
 export default function MainPage() {
   return (
     <>

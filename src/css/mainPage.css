@@ -33,30 +33,7 @@ header .navBarLinks:nth-child(1) {
   margin-left: auto;
   margin-right: 10px;
 }
-.mainSection {
-  overflow: auto;
-  display: grid;
-  grid-template-columns: repeat(5, 220px);
-  justify-content: space-around;
-  padding: 50px;
-}
-.mainSection .item{
-    height: 250px;
-    border: solid black 1px;
-    margin: 10px;
-}
-.mainSection::-webkit-scrollbar {
-  width: 10px;
-}
-.mainSection::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-.mainSection::-webkit-scrollbar-thumb {
-  background: #888;
-}
-.mainSection::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
+
 footer {
   border: solid 1px black;
 }
