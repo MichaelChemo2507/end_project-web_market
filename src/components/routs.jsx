@@ -5,9 +5,10 @@ import CashRegister from "./cashRegister";
 import ShopingCart from "./shopingCart";
 import Adding from "./adding";
 import Updating from "./updating";
+import MainPage from "./mainPage";
 
 export default function Routs() {
-  const router = createBrowserRouter([
+  const routs = createBrowserRouter([
     {
       path: "/",
       element: <MainPage></MainPage>,
@@ -19,16 +20,16 @@ export default function Routs() {
         {
           path: "/admin",
           element: <Admin></Admin>,
-          children: [
-            {
-              element: <Adding></Adding>,
-              index: true,
-            },
-            {
-              path: "/updating",
-              element: <Updating></Updating>,
-            },
-          ],
+          // children: [
+          //   {
+          //     element: <Adding></Adding>,
+          //     index: true,
+          //   },
+          //   {
+          //     path: "/updating",
+          //     element: <Updating></Updating>,
+          //   },
+          // ],
         },
         {
           path: "/cashRegister",
@@ -43,7 +44,7 @@ export default function Routs() {
   ]);
   return (
     <>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={routs}></RouterProvider>
     </>
   );
 }

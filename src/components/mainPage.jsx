@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import '../css/mainPage.css'
 
 export default function MainPage() {
   return (
@@ -6,16 +7,13 @@ export default function MainPage() {
       <div className="wrapper">
         <header>
           <Link to="/admin" className="navBarLinks">
-            {" "}
-            כניסת מנהל{" "}
+            כניסת מנהל
           </Link>
           <Link to="/" className="navBarLinks">
-            {" "}
-            דף הבית{" "}
+            דף הבית
           </Link>
           <Link to="/shopingCart" className="navBarLinks">
-            {" "}
-            סל קניות{" "}
+            סל קניות
           </Link>
         </header>
         <div className="mainSection">

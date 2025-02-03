@@ -5,16 +5,10 @@ export default function Admin() {
     <>
       <div className="adminBtnSection">
         <div className="addBtn">
-          <Link to="/admin">
-            {" "}
-            הוסף{" "}
-          </Link>
+          <Link to="/admin">הוסף</Link>
         </div>
         <div className="updateBtn">
-          <Link to="/update">
-            {" "}
-            עדכן{" "}
-          </Link>
+          <Link to="/update">עדכן</Link>
           <input type="text" name="productCode" placeholder=" ...קוד מוצר" />
         </div>
       </div>
