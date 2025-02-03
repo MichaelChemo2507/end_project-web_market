@@ -1,14 +1,28 @@
 import { Link, Outlet } from "react-router-dom";
 
 export default function MainPage() {
-    return (<>
+  return (
+    <>
+      <div className="wrapper">
         <header>
-            <Link to='/admin' className="navBarLinks"> כניסת מנהל </Link>
-            <Link to='/' className="navBarLinks"> דף הבית </Link>
-            <Link to='/shopingCart' className="navBarLinks"> סל קניות </Link>
-        </header>   
+          <Link to="/admin" className="navBarLinks">
+            {" "}
+            כניסת מנהל{" "}
+          </Link>
+          <Link to="/" className="navBarLinks">
+            {" "}
+            דף הבית{" "}
+          </Link>
+          <Link to="/shopingCart" className="navBarLinks">
+            {" "}
+            סל קניות{" "}
+          </Link>
+        </header>
         <div className="mainSection">
-            <Outlet></Outlet>
+          <Outlet></Outlet>
         </div>
-    </>)
+        <footer></footer>
+      </div>
+    </>
+  );
 }
