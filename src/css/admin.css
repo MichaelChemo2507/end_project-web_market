@@ -8,14 +8,33 @@
     border: 1px black solid;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-.addBtn{
-    border: 1px black solid;
-}
-.updateBtn{
-    border: 1px black solid;
+    justify-content: space-evenly;
 }
 .inputSection{
     border: 1px black solid;
 }
+.links{
+    text-decoration: none;
+    display: flex;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    height: 100px;
+}
+
+.links:nth-child(2) input{
+   width: 100px;
+   border-radius: 10px;
+   margin: 10px;
+}
+.links:nth-child(2) button{
+    height: 100%;
+    width: 100%;
+    background-color:unset;
+    border: unset;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+

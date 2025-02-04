@@ -1,17 +1,17 @@
-import { Link, Outlet } from "react-router-dom";
+import { Form, Link, Outlet } from "react-router-dom";
 import "../css/admin.css";
 export default function Admin() {
   return (
     <>
       <div className="mainAdminSection">
         <div className="adminBtnSelection">
-          <div className="addBtn">
-            <Link to="/admin">הוסף</Link>
-          </div>
-          <div className="updateBtn">
-            <Link to="/update">עדכן</Link>
+          <Link className="links" to="/admin">
+            הוסף
+          </Link>
+          <Form className="links">
             <input type="text" name="productCode" placeholder=" ...קוד מוצר" />
-          </div>
+            <button>עדכן</button>
+          </Form>
         </div>
         <div className="inputSection">
           <Outlet></Outlet>

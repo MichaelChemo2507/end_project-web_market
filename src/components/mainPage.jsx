@@ -16,7 +16,7 @@ export default function MainPage() {
           </Link>
         </header>
 
-          <Outlet></Outlet>
+        <Outlet></Outlet>
 
         <footer></footer>
       </div>
