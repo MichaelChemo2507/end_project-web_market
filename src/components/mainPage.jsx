@@ -15,9 +15,9 @@ export default function MainPage() {
             סל קניות
           </Link>
         </header>
-        <div className="mainSection">
+
           <Outlet></Outlet>
-        </div>
+
         <footer></footer>
       </div>
     </>

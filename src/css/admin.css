@@ -1,0 +1,21 @@
+.mainAdminSection{
+    background-color: rgb(206, 222, 177);
+    display: grid;
+    padding: 50px;
+    grid-template-columns: 1fr 4fr;
+}
+.adminBtnSelection{
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.addBtn{
+    border: 1px black solid;
+}
+.updateBtn{
+    border: 1px black solid;
+}
+.inputSection{
+    border: 1px black solid;
+}
