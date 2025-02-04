@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 export default function Admin() {
   return (
     <>
-      <div className="adminBtnSection">
+      <div className="adminBtnSelection">
         <div className="addBtn">
           <Link to="/admin">הוסף</Link>
         </div>
