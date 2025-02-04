@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 .wrapper {
+  background-color: cadetblue;
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
@@ -10,20 +11,23 @@
   height: 775px;
   width: 1300px;
   margin: 0px auto;
-  border: solid 1px black;
 }
 header {
+  background-color:brown;
   direction: rtl;
   display: flex;
-  border: solid 1px black;
   align-items: center;
 }
 header .navBarLinks {
+  background-color: cadetblue;
   text-decoration: none;
-  border: 1px solid black;
   width: 100px;
   text-align: center;
   border-radius: 10px;
+}
+header .navBarLinks:hover {
+  font-size: 18px;
+  font-weight: bolder
 }
 header .navBarLinks:nth-child(3) {
   margin-left: 10px;
@@ -33,7 +37,6 @@ header .navBarLinks:nth-child(1) {
   margin-left: auto;
   margin-right: 10px;
 }
-
-footer {
-  border: solid 1px black;
+footer{
+  background-color:brown;
 }

@@ -6,13 +6,16 @@
     padding: 50px;
   }
   .mainSection .item{
+    padding: 5px;
+    border-radius: 10px;
       height: 250px;
-      border: solid black 1px;
+      border: solid black 2px;
       margin: 10px;
       display: grid;
       grid-template-rows: 60% 10% 10% 10% 10%;
       text-align: center;
       font-size: small;
+      
   }
   .mainSection .item img{
     width: 100%;
@@ -20,7 +23,10 @@
   }
   .mainSection .item .description{
     font-size: x-small;
-
+  }
+  .mainSection .item button{
+    width: 100px;
+    margin: 0 auto;
   }
 
 
