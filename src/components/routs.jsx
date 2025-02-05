@@ -20,16 +20,16 @@ export default function Routs() {
         {
           path: "/admin",
           element: <Admin></Admin>,
-          // children: [
-          //   {
-          //     element: <Adding></Adding>,
-          //     index: true,
-          //   },
+           children: [
+             {
+               element: <Adding></Adding>,
+               index: true,
+             },
           //   {
           //     path: "/updating",
           //     element: <Updating></Updating>,
           //   },
-          // ],
+          ],
         },
         {
           path: "/cashRegister",

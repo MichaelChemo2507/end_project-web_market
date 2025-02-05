@@ -12,6 +12,13 @@
 }
 .inputSection{
     border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputSection .addingForm{
+    display: flex;
+    flex-direction: column;
 }
 .links{
     text-decoration: none;
