@@ -26,7 +26,7 @@ export default function Routs() {
                index: true,
              },
              {
-               path: "updating",
+               path: "updating/:productCode",
                element: <Updating></Updating>
              },
           ],
