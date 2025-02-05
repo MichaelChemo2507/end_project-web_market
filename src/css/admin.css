@@ -2,19 +2,27 @@
     background-color: rgb(206, 222, 177);
     display: grid;
     padding: 50px;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 4fr 1fr;
 }
 .adminBtnSelection{
     border: 1px black solid;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .inputSection{
     border: 1px black solid;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.inputSection .addingForm{
+    width: 250px;
+    height: 300px;
+    padding: 15px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
 }
 .inputSection .addingForm{
     display: flex;
@@ -35,11 +43,12 @@
    border-radius: 10px;
    margin: 10px;
 }
-.links:nth-child(2) button{
+.links:nth-child(2) .editLink{
     height: 100%;
     width: 100%;
-    background-color:unset;
-    border: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: inherit;
     font-family: inherit;
 }

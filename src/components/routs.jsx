@@ -25,18 +25,18 @@ export default function Routs() {
                element: <Adding></Adding>,
                index: true,
              },
-          //   {
-          //     path: "/updating",
-          //     element: <Updating></Updating>,
-          //   },
+             {
+               path: "updating",
+               element: <Updating></Updating>
+             },
           ],
         },
         {
-          path: "/cashRegister",
+          path: "cashRegister",
           element: <CashRegister></CashRegister>,
         },
         {
-          path: "/shoppingCart",
+          path: "shoppingCart",
           element: <ShoppingCart></ShoppingCart>,
         },
       ],
