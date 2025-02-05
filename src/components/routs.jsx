@@ -6,6 +6,7 @@ import ShoppingCart from "./shoppingCart";
 import Adding from "./adding";
 import Updating from "./updating";
 import MainPage from "./mainPage";
+import { loaderHandelr } from "../handllers/loaderHandllers/updateLoaders";
 
 export default function Routs() {
   const routs = createBrowserRouter([
@@ -20,15 +21,16 @@ export default function Routs() {
         {
           path: "/admin",
           element: <Admin></Admin>,
-           children: [
-             {
-               element: <Adding></Adding>,
-               index: true,
-             },
-             {
-               path: "updating/:productCode",
-               element: <Updating></Updating>
-             },
+          children: [
+            {
+              element: <Adding></Adding>,
+              index: true,
+            },
+            {
+              path: "updating/:productCode",
+              element: <Updating></Updating>,
+              loader: loaderHandelr,
+            },
           ],
         },
         {

@@ -10,7 +10,7 @@ export default function Admin() {
           <Outlet></Outlet>
         </div>
         <div className="adminBtnSelection">
-          <Link className="links" to={`/admin/${productCode}`}>
+          <Link className="links" to='/admin'>
             הוסף
           </Link>
           <div className="links">
@@ -22,7 +22,7 @@ export default function Admin() {
                 setProductCode(e.target.value);
               }}
             />
-            <Link className="editLink" to="updating">
+            <Link className="editLink" to={`updating/${productCode}`}>
               עדכן
             </Link>
           </div>
