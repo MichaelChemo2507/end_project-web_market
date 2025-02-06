@@ -1,6 +1,10 @@
 import { productsData } from "../../data/productData"
 
 export function loaderHandelr({ params }) {
-    let product = productsData.filter(obj => { return obj.productCode === params.productCode });
-    return product;
+    if (params) {
+        let product = productsData.filter(obj => { return obj.productCode === params.productCode });
+        if (product.length > 0) 
+            return product;
+    }
+    return undefined;
 }
