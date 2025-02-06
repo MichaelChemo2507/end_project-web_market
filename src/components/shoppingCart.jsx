@@ -8,9 +8,18 @@ export default function ShopingCart() {
   return (
     <>
       <div className="CartMainSection">
-        {(productsCart[0].length > 0)?<CreateTable></CreateTable>: <h1>אין פריטים בעגלה</h1>}
-        <h3>{} - סהכ </h3>
-        <Link to="/cashRegister"> מעבר לקופה </Link>
+        <div className="tableSection">
+          {productsCart[0].length > 0 ? (
+            <CreateTable></CreateTable>
+          ) : (
+            <h1>אין פריטים בעגלה</h1>
+          )}
+        </div>
+        <div className="underTableSection">
+          <hr />
+          <h3>{} - סהכ </h3>
+          <Link className="linkToRegister" to="/cashRegister"> מעבר לקופה </Link>
+        </div>
       </div>
     </>
   );

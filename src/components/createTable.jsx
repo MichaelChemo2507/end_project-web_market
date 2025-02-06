@@ -25,14 +25,13 @@ export default function CreateTable() {
   
   return (
     <>
-      <div className="tableSection">
+      
         <h2> עגלת קניות </h2>
 
         <table>
           <tr>{tableHeaders}</tr>
           {tableBoxes}
         </table>
-      </div>
     </>
   );
 }

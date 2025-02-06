@@ -1,18 +1,39 @@
 .CartMainSection{
-
+  display: grid;
 }
-.CartMainSection table {
+.CartMainSection .tableSection{
+text-align: center;
+}
+.CartMainSection .underTableSection{
+  margin-top: 50px;
+  font-size: medium;
+}
+.CartMainSection .linkToRegister{
+  display: block;
+  background-color: rgb(124, 196, 210);
+  width: 100px;
+  text-align: center;
+  border-radius: 10px;
+}
+.CartMainSection .linkToRegister:hover{
+  font-size: large;
+}
+table {
+  
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
   
   td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
+    border: 1px solid #121212;
     padding: 8px;
   }
   
   tr:nth-child(even) {
+    
     background-color: #dddddd;
+  }
+  tr:nth-child(odd) {
+    background-color: #8d8c8c;
   }
