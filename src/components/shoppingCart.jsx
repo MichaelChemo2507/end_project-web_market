@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import CreateTable from "./createTable";
 import "../css/shoppingCart.css";
-import { productsCartContext } from "../contexts/contextCreator";
+import { priceCalcContext, productsCartContext } from "../contexts/contextCreator";
 import { useContext } from "react";
 export default function ShopingCart() {
   let productsCart = useContext(productsCartContext);
-  let priceCalc = 0;
+  let priceCalc = useContext(priceCalcContext);
+  priceCalc.current = 0;
   if (productsCart[0].length > 0) {
     productsCart[0].forEach((product) => {
-      priceCalc += product.price;
+      priceCalc.current += product.price;
     });
   }
   return (
@@ -23,7 +24,7 @@ export default function ShopingCart() {
         </div>
         <div className="underTableSection">
           <hr />
-          <h3>{priceCalc.toFixed(2)} - סהכ </h3>
+          <h3>{priceCalc.current.toFixed(2)} - סהכ </h3>
           <Link className="linkToRegister" to="/cashRegister">
             מעבר לקופה
           </Link>
