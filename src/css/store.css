@@ -1,52 +1,72 @@
 .StoreMainSection {
-    display: grid;
-    grid-template-columns: repeat(5, 220px);
-    justify-content: space-around;
-  }
-  .StoreMainSection .item{
-    background-color:rgb(124, 196, 210);
-    padding: 5px;
-    border-radius: 10px;
-      height: 250px;
-      border: solid black 2px;
-      margin: 10px;
-      display: grid;
-      grid-template-rows: 60% 10% 10% 10% 10%;
-      text-align: center;
-      font-size: small;
-      
-  }
-  .StoreMainSection .item img{
-    width: 100%;
-    height: 100%;
-  }
-  .StoreMainSection .item .description{
-    font-size: x-small;
-  }
-  .StoreMainSection .item button{
-    width: 100px;
-    margin: 0 auto;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between items */
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--background-color);
+}
 
+.StoreMainSection .item {
+  background-color: var(--accent-color); /* Use accent color */
+  padding: 10px;
+  border-radius: 10px;
+  height: 250px;
+  border: 2px solid var(--border-color);
+  display: grid;
+  grid-template-rows: 60% 10% 10% 10% 10%;
+  text-align: center;
+  font-size: small;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.StoreMainSection .item:hover {
+  transform: scale(1.05); /* Add hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
+.StoreMainSection .item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; /* Match container radius */
+}
 
+.StoreMainSection .item .description {
+  font-size: x-small;
+  color: var(--text-color);
+}
 
+.StoreMainSection .item button {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100px;
+  margin: 0 auto;
+  background-color: var(--primary-color); /* Consistent button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.StoreMainSection .item button:hover {
+  background-color: var(--secondary-color);
+}
 
+/* Scrollbar customization */
+.mainSection::-webkit-scrollbar {
+  width: 10px;
+}
 
+.mainSection::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
 
+.mainSection::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
 
-
-  .mainSection::-webkit-scrollbar {
-    width: 10px;
-  }
-  .mainSection::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  .mainSection::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  .mainSection::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+.mainSection::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
