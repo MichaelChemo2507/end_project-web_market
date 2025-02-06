@@ -7,6 +7,7 @@ import Adding from "./adding";
 import Updating from "./updating";
 import MainPage from "./mainPage";
 import { loaderHandelr } from "../handllers/loaderHandllers/updateLoaders";
+import { addingAction } from "../handllers/actionHandllers/addingActions";
 
 export default function Routs() {
   const routs = createBrowserRouter([
@@ -25,6 +26,7 @@ export default function Routs() {
             {
               element: <Adding></Adding>,
               index: true,
+              action:addingAction
             },
             {
               path: "updating/:productCode",
