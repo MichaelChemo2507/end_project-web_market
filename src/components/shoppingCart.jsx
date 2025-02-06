@@ -5,6 +5,12 @@ import { productsCartContext } from "../contexts/contextCreator";
 import { useContext } from "react";
 export default function ShopingCart() {
   let productsCart = useContext(productsCartContext);
+  let priceCalc = 0;
+  if (productsCart[0].length > 0) {
+    productsCart[0].forEach((product) => {
+      priceCalc += product.price;
+    });
+  }
   return (
     <>
       <div className="CartMainSection">
@@ -17,8 +23,10 @@ export default function ShopingCart() {
         </div>
         <div className="underTableSection">
           <hr />
-          <h3>{} - סהכ </h3>
-          <Link className="linkToRegister" to="/cashRegister"> מעבר לקופה </Link>
+          <h3>{priceCalc.toFixed(2)} - סהכ </h3>
+          <Link className="linkToRegister" to="/cashRegister">
+            מעבר לקופה
+          </Link>
         </div>
       </div>
     </>
