@@ -1,10 +1,5 @@
-import { Form, useActionData } from "react-router-dom";
-import { productsData } from "../data/productData";
+import { Form } from "react-router-dom";
 export default function Adding() {
-  let product = useActionData();
-  console.log(product);
-  if (product) productsData.push(product);
-  console.log(productsData);
   return (
     <>
       <Form className="addingForm" method="post">
