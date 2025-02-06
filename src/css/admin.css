@@ -1,9 +1,5 @@
 :root {
-    --primary-color: #307473; /* צבע ראשי */
-    --secondary-color: #9C7A97; /* צבע משני */
-    --background-color: #E4DFDA; /* צבע רקע */
-    --text-color: #120309; /* צבע טקסט */
-    --accent-color: #987284; /* צבע דגש */
+
     --border-color: rgba(18, 3, 9, 0.2); /* צבע מסגרת שקוף */
   }
   
@@ -13,7 +9,6 @@
     gap: 20px; /* רווח בין העמודות */
     padding: 20px;
     background-color: var(--background-color);
-    min-height: 100vh;
   }
   
   .adminBtnSelection {
