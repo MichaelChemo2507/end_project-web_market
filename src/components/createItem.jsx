@@ -1,5 +1,5 @@
 import { get_URL } from "../utils/getImageUrl";
-import { createItemClick } from "../handllers/clickHandllers";
+import { createItemClick } from "../handllers/clickHandllers/createItemClicks";
 export default function CreateItem({ product }) {
   return (
     <>
