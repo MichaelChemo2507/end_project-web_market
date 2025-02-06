@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
-import '../css/shoppingCart'
 import CreateTable from "./createTable";
-
+import "../css/shoppingCart.css";
+import { productsCartContext } from "../contexts/contextCreator";
+import { useContext } from "react";
 export default function ShopingCart() {
-    return (<>
-        <CreateTable></CreateTable>
-        <hr></hr>
-        <h3>{ } - סהכ </h3>
+  let productsCart = useContext(productsCartContext);
+  return (
+    <>
+      <div className="CartMainSection">
+        {(productsCart[0].length > 0)?<CreateTable></CreateTable>: <h1>אין פריטים בעגלה</h1>}
+        <h3>{} - סהכ </h3>
         <Link to="/cashRegister"> מעבר לקופה </Link>
-    </>)
+      </div>
+    </>
+  );
 }

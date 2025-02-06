@@ -1,4 +1,4 @@
-import { Form, Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "../css/admin.css";
 import { useState } from "react";
 export default function Admin() {

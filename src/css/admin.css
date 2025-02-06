@@ -1,7 +1,5 @@
 .mainAdminSection{
-    background-color: rgb(206, 222, 177);
     display: grid;
-    padding: 50px;
     grid-template-columns: 4fr 1fr;
 }
 .adminBtnSelection{

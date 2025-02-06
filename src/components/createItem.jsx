@@ -1,6 +1,9 @@
 import { get_URL } from "../utils/getImageUrl";
 import { createItemClick } from "../handllers/clickHandllers/createItemClicks";
+import { useContext } from "react";
+import { productsCartContext } from "../contexts/contextCreator";
 export default function CreateItem({ product }) {
+  let productsCartState = useContext(productsCartContext);
   return (
     <>
       <div className="item">
@@ -10,7 +13,7 @@ export default function CreateItem({ product }) {
         <div>{product.price}</div>
         <button
           onClick={() => {
-            createItemClick(product);
+            createItemClick(product,productsCartState);
           }}
         >
           הוסף לסל

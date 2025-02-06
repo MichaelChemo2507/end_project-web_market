@@ -7,7 +7,7 @@ export default function Store() {
   });
   return (
     <>
-      <div className="mainSection">{items}</div>
+      <div className="StoreMainSection">{items}</div>
     </>
   );
 }
