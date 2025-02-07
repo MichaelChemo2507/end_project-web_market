@@ -8,8 +8,14 @@ import Updating from "./updating";
 import MainPage from "./mainPage";
 import { loaderHandelr } from "../handllers/loaderHandllers/updateLoaders";
 import { addingAction } from "../handllers/actionHandllers/addingActions";
+import { shoppingCartData } from "../data/shoppingCartData";
+import { useRef, useState } from "react";
+import { productsData } from "../data/productData";
 
 export default function Routs() {
+  let [cartProducts, setCartProducts] = useState(shoppingCartData);
+  let priceCalc = useRef(0);
+  let refProductsData= useRef(productsData);
   const routs = createBrowserRouter([
     {
       path: "/",
@@ -26,7 +32,7 @@ export default function Routs() {
             {
               element: <Adding></Adding>,
               index: true,
-              action:addingAction
+              action: addingAction,
             },
             {
               path: "updating/:productCode",
@@ -37,18 +43,18 @@ export default function Routs() {
         },
         {
           path: "cashRegister",
-          element: <CashRegister></CashRegister>,
+          element: <CashRegister priceCalc={priceCalc}></CashRegister>,
         },
         {
           path: "shoppingCart",
-          element: <ShoppingCart></ShoppingCart>,
+          element: <ShoppingCart priceCalc={priceCalc} cartProductsState={[cartProducts, setCartProducts]}></ShoppingCart>,
         },
       ],
     },
   ]);
   return (
     <>
-      <RouterProvider router={routs}></RouterProvider>
+          <RouterProvider router={routs}></RouterProvider>
     </>
   );
 }
