@@ -1,47 +1,77 @@
+:root {
+  --primary-color: #307473; /* צבע ראשי */
+  --secondary-color: #9C7A97; /* צבע משני */
+  --background-color: #E4DFDA; /* צבע רקע */
+  --text-color: #120309; /* צבע טקסט */
+  --accent-color: #987284; /* צבע דגש */
+  --hover-effect: scale(1.05); /* אפקט הובר */
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
+  transition: all 0.3s ease; /* אנימציה עדינה */
 }
+
 .wrapper {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 12fr 1fr;
-  height: 775px;
-  width: 1300px;
-  margin: 0px auto;
+  height: 100vh; /* גובה מלא של המסך */
+  width: 100%; /* רוחב מלא */
+  margin: 0 auto;
+  background-color: var(--background-color);
 }
+
 header {
-  background-color:rgb(124, 196, 210);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   direction: rtl;
   display: flex;
   align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צלליות */
 }
+
 header .navBarLinks {
-  background-color: rgb(206, 222, 177);
+  background-color: rgba(255, 255, 255, 0.8); /* רקע שקוף */
   width: 100px;
   text-align: center;
   border-radius: 10px;
+  padding: 10px;
+  margin: 0 10px;
+  color: var(--text-color);
+  font-weight: bold;
 }
+
 header .navBarLinks:hover {
-  font-size: 18px;
-  font-weight: bolder
+  transform: var(--hover-effect);
+  background-color: rgba(255, 255, 255, 1); /* רקע מלא בהובר */
 }
+
 header .navBarLinks:nth-child(3) {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 header .navBarLinks:nth-child(1) {
   margin-left: auto;
   margin-right: 10px;
 }
-.mainSection{
-  background-color: rgb(206, 222, 177);
+
+.mainSection {
+  background-color: var(--background-color);
   display: grid;
   overflow: auto;
-    padding: 50px;
+  padding: 50px;
+  color: var(--text-color);
 }
-footer{
-  background-color:rgb(124, 196, 210);
+
+footer {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  text-align: center;
+  padding: 10px;
+  color: white;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* צלליות */
 }

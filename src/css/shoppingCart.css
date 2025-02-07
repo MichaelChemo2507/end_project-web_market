@@ -1,39 +1,76 @@
-.CartMainSection{
+.CartMainSection {
   display: grid;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--background-color);
 }
-.CartMainSection .tableSection{
-text-align: center;
+
+.CartMainSection .tableSection {
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
 }
-.CartMainSection .underTableSection{
-  margin-top: 50px;
+
+.CartMainSection .underTableSection {
+  margin-top: 20px;
   font-size: medium;
+  color: var(--text-color);
 }
-.CartMainSection .linkToRegister{
-  display: block;
-  background-color: rgb(124, 196, 210);
-  width: 100px;
+
+.CartMainSection .linkToRegister {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
   text-align: center;
   border-radius: 10px;
+  font-size: medium;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-.CartMainSection .linkToRegister:hover{
+
+.CartMainSection .linkToRegister:hover {
   font-size: large;
+  background-color: var(--secondary-color);
 }
+
 table {
-  
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #121212;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    
-    background-color: #dddddd;
-  }
-  tr:nth-child(odd) {
-    background-color: #8d8c8c;
-  }
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+td, th {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+  background-color: #e6e6e6;
+}
+
+tr:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transition: background-color 0.3s ease;
+}

@@ -1,47 +1,100 @@
-.mainAdminSection{
+:root {
+
+    --border-color: rgba(18, 3, 9, 0.2); /* צבע מסגרת שקוף */
+  }
+  
+  .mainAdminSection {
     display: grid;
     grid-template-columns: 4fr 1fr;
-}
-.adminBtnSelection{
-    border: 1px black solid;
+    gap: 20px; /* רווח בין העמודות */
+    padding: 20px;
+    background-color: var(--background-color);
+  }
+  
+  .adminBtnSelection {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.inputSection{
-    border: 1px black solid;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inputSection {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.inputSection .addingForm{
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inputSection .addingForm {
     width: 250px;
     height: 300px;
     padding: 15px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-around;
-}
-.inputSection .addingForm{
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-}
-.links{
+    justify-content: space-around;
+    background-color: var(--background-color);
+  }
+  
+  .inputSection .addingForm input,
+  .inputSection .addingForm button {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .inputSection .addingForm button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .inputSection .addingForm button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .links {
     text-decoration: none;
     display: flex;
     font-size: x-large;
     justify-content: center;
     align-items: center;
-    border: 1px black solid;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
     height: 100px;
-}
-
-.links:nth-child(2) input{
-   width: 100px;
-   border-radius: 10px;
-   margin: 10px;
-}
-.links:nth-child(2) .editLink{
+    margin: 10px 0;
+    background-color: white;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  .links:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .links:nth-child(2) input {
+    width: 100px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .links:nth-child(2) .editLink {
     height: 100%;
     width: 100%;
     display: flex;
@@ -49,6 +102,5 @@
     align-items: center;
     font-size: inherit;
     font-family: inherit;
-}
-
-
+    color: inherit;
+  }
