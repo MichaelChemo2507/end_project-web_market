@@ -1,8 +1,6 @@
 import { Form, useLoaderData, useNavigate } from "react-router-dom";
 export default function Updating({productCodeState}) {
   let product = useLoaderData();
-  console.log(product);
-  
   let navigate = useNavigate();
   return (
     <>

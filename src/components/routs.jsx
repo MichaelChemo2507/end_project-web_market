@@ -62,7 +62,6 @@ export default function Routs() {
                 if (obj) {
                   refProductsData.current = refProductsData.current.map(
                     (product) => {
-                      console.log(obj.productCode);
                       if (product.productCode === obj.productCode) {
                         Object.keys(product).map((key) => {
                           product[key] = obj[key];
