@@ -41,7 +41,15 @@ export default function Routs() {
             {
               path: "updating/:productCode?",
               element: <Updating></Updating>,
-              loader: loaderHandelr,
+              loader: ({ params }) => {
+                console.log(`the loader is activate on this params = ${params.productCode}`);
+                if (params.productCode !== undefined) {
+                        let product = refProductsData.current.filter(obj => { return obj.productCode === params.productCode });
+                        if (product.length > 0) 
+                            return product;
+                }
+                    return undefined;
+              },
             },
           ],
         },
