@@ -1,12 +1,12 @@
 :root {
 
-    --border-color: rgba(18, 3, 9, 0.2); /* צבע מסגרת שקוף */
+    --border-color: rgba(18, 3, 9, 0.2);
   }
   
   .mainAdminSection {
     display: grid;
     grid-template-columns: 4fr 1fr;
-    gap: 20px; /* רווח בין העמודות */
+    gap: 20px;
     padding: 20px;
     background-color: var(--background-color);
   }

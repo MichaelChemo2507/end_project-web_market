@@ -6,12 +6,12 @@ import ShoppingCart from "./shoppingCart";
 import Adding from "./adding";
 import Updating from "./updating";
 import MainPage from "./mainPage";
-import { loaderHandelr } from "../handllers/loaderHandllers/updateLoaders";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { productsData } from "../data/productData";
 
 export default function Routs() {
   let refProductsData = useRef(productsData);
+  let [productCode, setProductCode] = useState();
   const routs = createBrowserRouter([
     {
       path: "/",
@@ -21,34 +21,57 @@ export default function Routs() {
           element: <Store></Store>,
           index: true,
           loader: () => {
-            return refProductsData.current === undefined || refProductsData.current.length > 0
+            return refProductsData.current === undefined ||
+              refProductsData.current.length > 0
               ? refProductsData.current
               : undefined;
           },
         },
         {
           path: "/admin",
-          element: <Admin></Admin>,
+          element: (
+            <Admin productCodeState={[productCode, setProductCode]}></Admin>
+          ),
           children: [
             {
               element: <Adding></Adding>,
               index: true,
-              action: async ({request}) => {
+              action: async ({ request }) => {
                 let obj = Object.fromEntries(await request.formData());
                 if (obj) refProductsData.current.push(obj);
               },
             },
             {
               path: "updating/:productCode?",
-              element: <Updating></Updating>,
+              element: (
+                <Updating
+                  productCodeState={[productCode, setProductCode]}
+                ></Updating>
+              ),
               loader: ({ params }) => {
-                console.log(`the loader is activate on this params = ${params.productCode}`);
                 if (params.productCode !== undefined) {
-                        let product = refProductsData.current.filter(obj => { return obj.productCode === params.productCode });
-                        if (product.length > 0) 
-                            return product;
+                  let product = refProductsData.current.filter((obj) => {
+                    return obj.productCode === params.productCode;
+                  });
+                  if (product.length > 0) return product;
                 }
-                    return undefined;
+                return undefined;
+              },
+              action: async ({ request }) => {
+                let obj = Object.fromEntries(await request.formData());
+                if (obj) {
+                  refProductsData.current = refProductsData.current.map(
+                    (product) => {
+                      console.log(obj.productCode);
+                      if (product.productCode === obj.productCode) {
+                        Object.keys(product).map((key) => {
+                          product[key] = obj[key];
+                        });
+                      }
+                      return product;
+                    }
+                  );
+                }
               },
             },
           ],

@@ -1,19 +1,18 @@
 import { Form, useLoaderData, useNavigate } from "react-router-dom";
-export default function Updating() {
+export default function Updating({productCodeState}) {
   let product = useLoaderData();
+  console.log(product);
+  
   let navigate = useNavigate();
-  let productCode;
   return (
     <>
-      <Form className="addingForm">
-        {product === undefined && (
-          <>
+      <Form className="addingForm" method="post">
             <div className="searchBar">
               <button
                 onClick={(e) => {
                   e.preventDefault();
                   navigate({
-                    pathname: `/admin/updating/${productCode}`,
+                    pathname: `/admin/updating/${productCodeState[0]}`,
                   });
                 }}
               >
@@ -23,13 +22,12 @@ export default function Updating() {
                 type="text"
                 name="productCode"
                 placeholder=" ...קוד מוצר"
+                defaultValue={productCodeState[0]}
                 onBlur={(e) => {
-                  productCode = e.target.value;
+                  productCodeState[1](e.target.value);
                 }}
               />
             </div>
-          </>
-        )}
         <input
           type="text"
           name="photoUrl"
