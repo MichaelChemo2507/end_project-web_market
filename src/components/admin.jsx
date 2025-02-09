@@ -18,7 +18,7 @@ export default function Admin() {
               type="text"
               name="productCode"
               placeholder=" ...קוד מוצר"
-              onChange={(e) => {
+              onBlur={(e) => {
                 setProductCode(e.target.value);
               }}
             />

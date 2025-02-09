@@ -7,7 +7,6 @@ import Adding from "./adding";
 import Updating from "./updating";
 import MainPage from "./mainPage";
 import { loaderHandelr } from "../handllers/loaderHandllers/updateLoaders";
-import { addingAction } from "../handllers/actionHandllers/addingActions";
 import { useRef } from "react";
 import { productsData } from "../data/productData";
 
@@ -34,10 +33,13 @@ export default function Routs() {
             {
               element: <Adding></Adding>,
               index: true,
-              action: addingAction,
+              action: async ({request}) => {
+                let obj = Object.fromEntries(await request.formData());
+                if (obj) refProductsData.current.push(obj);
+              },
             },
             {
-              path: "updating/:productCode",
+              path: "updating/:productCode?",
               element: <Updating></Updating>,
               loader: loaderHandelr,
             },
