@@ -8,8 +8,11 @@ import Updating from "./updating";
 import MainPage from "./mainPage";
 import { loaderHandelr } from "../handllers/loaderHandllers/updateLoaders";
 import { addingAction } from "../handllers/actionHandllers/addingActions";
+import { useRef } from "react";
+import { productsData } from "../data/productData";
 
 export default function Routs() {
+  let refProductsData = useRef(productsData);
   const routs = createBrowserRouter([
     {
       path: "/",
@@ -18,6 +21,11 @@ export default function Routs() {
         {
           element: <Store></Store>,
           index: true,
+          loader: () => {
+            return refProductsData.current === undefined || refProductsData.current.length > 0
+              ? refProductsData.current
+              : undefined;
+          },
         },
         {
           path: "/admin",
@@ -26,7 +34,7 @@ export default function Routs() {
             {
               element: <Adding></Adding>,
               index: true,
-              action:addingAction
+              action: addingAction,
             },
             {
               path: "updating/:productCode",
