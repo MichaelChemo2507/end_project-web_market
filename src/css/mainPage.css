@@ -6,6 +6,21 @@
   --accent-color: #987284;
   --hover-effect: scale(1.05);
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 
 * {
   text-align: center;
@@ -27,6 +42,9 @@
 }
 
 header {
+  z-index: 1;
+  top: 0;
+  position:sticky;
   background: linear-gradient(
     135deg,
     var(--primary-color),
@@ -67,7 +85,6 @@ header .navBarLinks:nth-child(1) {
 .mainSection {
   background-color: var(--background-color);
   display: grid;
-  overflow: auto;
   padding: 50px;
   color: var(--text-color);
 }
@@ -80,5 +97,5 @@ footer {
   );
   padding: 10px;
   color: white;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* צלליות */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
