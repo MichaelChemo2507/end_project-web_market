@@ -16,14 +16,14 @@ export default function ShopingCart({refPriceCalc}) {
       <div className="CartMainSection">
         <div className="tableSection">
           {productsCart[0].length > 0 ? (
-            <CreateTable productsCart={productsCart}></CreateTable>
+            <CreateTable productsCart={productsCart} removeOption={true}></CreateTable>
           ) : (
             <h1>אין פריטים בעגלה</h1>
           )}
         </div>
         <div className="underTableSection">
           <hr />
-          <h3>{refPriceCalc.current.toFixed(2)} - סהכ </h3>
+          <h3 style={{marginTop:'20px'}}>{refPriceCalc.current.toFixed(2)} - סהכ </h3>
           <Link className="linkToRegister" to="/cashRegister">
             מעבר לקופה
           </Link>
