@@ -1,5 +1,4 @@
 import { get_URL } from "../utils/getImageUrl";
-import { createItemClick } from "../handllers/clickHandllers/createItemClicks";
 import { useContext } from "react";
 import { productsCartContext } from "../contexts/contextCreator";
 export default function CreateItem({ product }) {
@@ -7,13 +6,13 @@ export default function CreateItem({ product }) {
   return (
     <>
       <div className="item">
-        <img src={get_URL(product.photoUrl)} />
+        <img alt="product" src={get_URL(product.photoUrl)} />
         <div>{product.productCode}</div>
         <div className="description">{product.description}</div>
         <div>{product.price}</div>
         <button
           onClick={() => {
-            createItemClick(product,productsCartState);
+            productsCartState[1]([...productsCartState[0], product]);
           }}
         >
           הוסף לסל

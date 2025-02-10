@@ -8,10 +8,13 @@ import Updating from "./updating";
 import MainPage from "./mainPage";
 import { useRef, useState } from "react";
 import { productsData } from "../data/productData";
+import { productsCartContext } from "../contexts/contextCreator";
 
 export default function Routs() {
-  let refProductsData = useRef(productsData);
+  let refProductsData = useRef(productsData); 
+  let priceCalc = useRef(0); 
   let [productCode, setProductCode] = useState();
+  let [cartProducts, setCartProducts] = useState();
   const routs = createBrowserRouter([
     {
       path: "/",
@@ -65,6 +68,7 @@ export default function Routs() {
                       if (product.productCode === obj.productCode) {
                         Object.keys(product).map((key) => {
                           product[key] = obj[key];
+                          return 0;
                         });
                       }
                       return product;
@@ -77,18 +81,21 @@ export default function Routs() {
         },
         {
           path: "cashRegister",
-          element: <CashRegister></CashRegister>,
+          element: <CashRegister refPriceCalc={priceCalc}></CashRegister>,
         },
         {
           path: "shoppingCart",
-          element: <ShoppingCart></ShoppingCart>,
+          element: <ShoppingCart refPriceCalc={priceCalc}></ShoppingCart>,
+          loader: () => {},
         },
       ],
     },
   ]);
   return (
     <>
-      <RouterProvider router={routs}></RouterProvider>
+      <productsCartContext.Provider value={[cartProducts, setCartProducts]}>
+        <RouterProvider router={routs}></RouterProvider>
+      </productsCartContext.Provider>
     </>
   );
 }

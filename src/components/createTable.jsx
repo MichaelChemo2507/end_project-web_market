@@ -1,11 +1,9 @@
-import { productsCartContext } from "../contexts/contextCreator";
-import { useContext } from "react";
-export default function CreateTable() {
-  let productsCartState = useContext(productsCartContext);
-  const tableHeaders = Object.keys(productsCartState[0][0]).map((key) => {
+
+export default function CreateTable({productsCart}) {
+  const tableHeaders = Object.keys(productsCart[0][0]).map((key) => {
     return <th>{key}</th>;
   });
-  const tableBoxes = productsCartState[0].map((product) => {
+  const tableBoxes = productsCart[0].map((product) => {
     return (
       <tr>
         {Object.values(product).map((value) => {
@@ -13,8 +11,8 @@ export default function CreateTable() {
         })}
         <td
           onClick={() => {
-            productsCartState[0].splice(productsCartState[0].indexOf(product), 1);
-            productsCartState[1]([...productsCartState[0]]);
+            productsCart[0].splice(productsCart[0].indexOf(product), 1);
+            productsCart[1]([...productsCart[0]]);
           }}
         >
           הסר
