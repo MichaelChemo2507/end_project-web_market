@@ -6,7 +6,7 @@ export default function CashRegister({refPriceCalc}) {
             <Form>
                 <input type="text" name="id" placeholder=" ...ת.ז "/>
                 <input type="text" name="location" placeholder=" ...מיקום למשלוח" />
-                <h3>{refPriceCalc.current} - סהכ </h3>
+                <h3>{refPriceCalc.current.toFixed(2)} - סהכ </h3>
                 <button> תשלום </button>
             </Form>
         </div>

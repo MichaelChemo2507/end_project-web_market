@@ -13,6 +13,7 @@ import { productsCartContext } from "../contexts/contextCreator";
 export default function Routs() {
   let refProductsData = useRef(productsData); 
   let priceCalc = useRef(0); 
+  let orderData = useRef([]); 
   let [productCode, setProductCode] = useState();
   let [cartProducts, setCartProducts] = useState();
   const routs = createBrowserRouter([
@@ -82,11 +83,27 @@ export default function Routs() {
         {
           path: "cashRegister",
           element: <CashRegister refPriceCalc={priceCalc}></CashRegister>,
+          action: async ({ request }) => {
+            let obj = Object.fromEntries(await request.formData());
+            if (obj) {
+              let productsCode = cartProducts.map((product) => {
+                return product.productCode;
+              })
+              orderData.current.push(
+            
+                {
+                  productsCode: [...productsCode],
+                  totalPrice: priceCalc.current,
+                  orderLocation: obj.location,
+                  ID: obj.id
+              }
+              )
+            }
+          }
         },
         {
           path: "shoppingCart",
           element: <ShoppingCart refPriceCalc={priceCalc}></ShoppingCart>,
-          loader: () => {},
         },
       ],
     },
