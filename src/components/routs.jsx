@@ -9,7 +9,6 @@ import MainPage from "./mainPage";
 import { useRef, useState } from "react";
 import { productsData } from "../data/productData";
 import { productsCartContext } from "../contexts/contextCreator";
-import { shoppingCartData } from "../data/shoppingCartData";
 
 export default function Routs() {
   let refProductsData = useRef(productsData);

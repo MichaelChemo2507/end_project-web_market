@@ -1,9 +1,9 @@
 :root {
   --primary-color: #307473;
-  --secondary-color: #9c7a97;
+  --secondary-color: #A4A9AD;
   --background-color: #e4dfda;
   --text-color: #120309;
-  --accent-color: #987284;
+  --accent-color: #A4A9AD;
   --hover-effect: scale(1.05);
 }
 ::-webkit-scrollbar {
