@@ -89,6 +89,7 @@ export default function Routs() {
           action: async ({ request }) => {
             let obj = Object.fromEntries(await request.formData());
             let objProductsCart = JSON.parse(obj.productsCart);
+            
             if (obj) {
               let productsCode = objProductsCart.map((product) => {
                 return product.productCode;
