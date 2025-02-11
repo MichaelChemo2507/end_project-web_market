@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import CreateTable from "./createTable";
-
 import "../css/shoppingCart.css";
 import { productsCartContext } from "../contexts/contextCreator";
 import { useContext } from "react";

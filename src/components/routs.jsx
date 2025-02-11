@@ -15,7 +15,7 @@ export default function Routs() {
   let priceCalc = useRef(0);
   let orderData = useRef([]);
   let [productCode, setProductCode] = useState();
-  let [cartProducts, setCartProducts] = useState();
+  let [cartProducts, setCartProducts] = useState([]);
 
   const routs = createBrowserRouter([
     {
