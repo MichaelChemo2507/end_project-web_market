@@ -21,7 +21,7 @@ export default function CashRegister({ refPriceCalc }) {
         <div className="underTableSection" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
           <hr />
           <Form method="post" className="Form" style={{ padding: '20px' }}>
-            <input type="hidden" name="productsCart" value={JSON.stringify([productsCart[0]])}/>
+            <input type="hidden" name="productsCart" value={JSON.stringify(productsCart[0])}/>
             <input type="text" name="id" placeholder=" ...ת.ז " />
             <input type="text" name="location" placeholder=" ...מיקום למשלוח" />
             <h3>{refPriceCalc.current.toFixed(2)} - סהכ </h3>

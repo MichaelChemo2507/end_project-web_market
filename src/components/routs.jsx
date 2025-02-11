@@ -9,7 +9,6 @@ import MainPage from "./mainPage";
 import { useRef, useState } from "react";
 import { productsData } from "../data/productData";
 import { productsCartContext } from "../contexts/contextCreator";
-import { shoppingCartData } from "../data/shoppingCartData";
 
 export default function Routs() {
   let refProductsData = useRef(productsData);
@@ -87,6 +86,7 @@ export default function Routs() {
           action: async ({ request }) => {
             let obj = Object.fromEntries(await request.formData());
             let objProductsCart = JSON.parse(obj.productsCart);
+            
             if (obj) {
               let productsCode = objProductsCart.map((product) => {
                 return product.productCode;
