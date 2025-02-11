@@ -1,17 +1,33 @@
 :root {
-  --primary-color: #307473; /* צבע ראשי */
-  --secondary-color: #9C7A97; /* צבע משני */
-  --background-color: #E4DFDA; /* צבע רקע */
-  --text-color: #120309; /* צבע טקסט */
-  --accent-color: #987284; /* צבע דגש */
-  --hover-effect: scale(1.05); /* אפקט הובר */
+  --primary-color: #307473;
+  --secondary-color: #A4A9AD;
+  --background-color: #e4dfda;
+  --text-color: #120309;
+  --accent-color: #A4A9AD;
+  --hover-effect: scale(1.05);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 * {
+  text-align: center;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  transition: all 0.3s ease; /* אנימציה עדינה */
+  transition: all 0.3s ease;
 }
 
 .wrapper {
@@ -19,25 +35,31 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 12fr 1fr;
-  height: 100vh; /* גובה מלא של המסך */
-  width: 100%; /* רוחב מלא */
+  height: 100vh;
+  width: 100%;
   margin: 0 auto;
   background-color: var(--background-color);
 }
 
 header {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  z-index: 1;
+  top: 0;
+  position:sticky;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   direction: rtl;
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צלליות */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .navBarLinks {
-  background-color: rgba(255, 255, 255, 0.8); /* רקע שקוף */
+  background-color: rgba(255, 255, 255, 0.8);
   width: 100px;
-  text-align: center;
   border-radius: 10px;
   padding: 10px;
   margin: 0 10px;
@@ -47,7 +69,7 @@ header .navBarLinks {
 
 header .navBarLinks:hover {
   transform: var(--hover-effect);
-  background-color: rgba(255, 255, 255, 1); /* רקע מלא בהובר */
+  background-color: rgba(255, 255, 255, 1);
 }
 
 header .navBarLinks:nth-child(3) {
@@ -63,15 +85,47 @@ header .navBarLinks:nth-child(1) {
 .mainSection {
   background-color: var(--background-color);
   display: grid;
-  overflow: auto;
   padding: 50px;
   color: var(--text-color);
 }
 
 footer {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   padding: 10px;
   color: white;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* צלליות */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+.Form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Form button:hover {
+  background-color: var(--secondary-color);
+}
+.Form {
+  width: 250px;
+  height: 300px;
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--background-color);
+}
+
+.Form input,
+.Form button {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
 }

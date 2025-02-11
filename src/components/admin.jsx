@@ -1,8 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import "../css/admin.css";
-import { useState } from "react";
-export default function Admin() {
-  let [productCode, setProductCode] = useState();
+export default function Admin({productCodeState}) {
   return (
     <>
       <div className="mainAdminSection">
@@ -18,11 +16,11 @@ export default function Admin() {
               type="text"
               name="productCode"
               placeholder=" ...קוד מוצר"
-              onChange={(e) => {
-                setProductCode(e.target.value);
+              onBlur={(e) => {
+                productCodeState[1](e.target.value);
               }}
             />
-            <Link className="editLink" to={`updating/${productCode}`}>
+            <Link className="editLink" to={`updating/${productCodeState[0]}`}>
               עדכן
             </Link>
           </div>
