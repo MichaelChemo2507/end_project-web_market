@@ -16,6 +16,7 @@ export default function Routs() {
   let orderData = useRef([]);
   let [productCode, setProductCode] = useState();
   let [cartProducts, setCartProducts] = useState();
+
   const routs = createBrowserRouter([
     {
       path: "/",
@@ -40,10 +41,12 @@ export default function Routs() {
             {
               element: <Adding></Adding>,
               index: true,
+
               action: async ({ request }) => {
                 let obj = Object.fromEntries(await request.formData());
                 if (obj) refProductsData.current.push(obj);
               },
+
             },
             {
               path: "updating/:productCode?",
@@ -103,6 +106,7 @@ export default function Routs() {
         {
           path: "shoppingCart",
           element: <ShoppingCart refPriceCalc={priceCalc}></ShoppingCart>,
+
         },
       ],
     },
@@ -112,6 +116,7 @@ export default function Routs() {
       <productsCartContext.Provider value={[cartProducts, setCartProducts]}>
         <RouterProvider router={routs}></RouterProvider>
       </productsCartContext.Provider>
+
     </>
   );
 }

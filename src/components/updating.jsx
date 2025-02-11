@@ -44,6 +44,7 @@ export default function Updating({productCodeState}) {
           defaultValue={product && product[0].price}
           placeholder="price..."
         />
+
         <button> עדכן </button>
       </Form>
     </>
