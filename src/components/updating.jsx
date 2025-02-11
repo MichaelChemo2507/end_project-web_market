@@ -4,7 +4,7 @@ export default function Updating({productCodeState}) {
   let navigate = useNavigate();
   return (
     <>
-      <Form className="addingForm" method="post">
+      <Form className="Form" method="post">
             <div className="searchBar">
               <button
                 onClick={(e) => {

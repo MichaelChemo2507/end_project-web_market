@@ -99,3 +99,33 @@ footer {
   color: white;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
+.Form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Form button:hover {
+  background-color: var(--secondary-color);
+}
+.Form {
+  width: 250px;
+  height: 300px;
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--background-color);
+}
+
+.Form input,
+.Form button {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+}

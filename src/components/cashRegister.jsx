@@ -18,9 +18,9 @@ export default function CashRegister({ refPriceCalc }) {
             <h1>אין פריטים בעגלה</h1>
           )}
         </div>
-        <div className="underTableSection">
+        <div className="underTableSection" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
           <hr />
-          <Form style={{padding:'20px'}}>
+          <Form method="post" className="Form" style={{ padding: '20px' }}>
             <input type="text" name="id" placeholder=" ...ת.ז " />
             <input type="text" name="location" placeholder=" ...מיקום למשלוח" />
             <h3>{refPriceCalc.current.toFixed(2)} - סהכ </h3>
