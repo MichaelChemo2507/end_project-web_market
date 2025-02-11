@@ -9,11 +9,12 @@ import MainPage from "./mainPage";
 import { useRef, useState } from "react";
 import { productsData } from "../data/productData";
 import { productsCartContext } from "../contexts/contextCreator";
+import { shoppingCartData } from "../data/shoppingCartData";
 
 export default function Routs() {
-  let refProductsData = useRef(productsData); 
-  let priceCalc = useRef(0); 
-  let orderData = useRef([]); 
+  let refProductsData = useRef(productsData);
+  let priceCalc = useRef(0);
+  let orderData = useRef([]);
   let [productCode, setProductCode] = useState();
   let [cartProducts, setCartProducts] = useState();
   const routs = createBrowserRouter([
@@ -85,21 +86,20 @@ export default function Routs() {
           element: <CashRegister refPriceCalc={priceCalc}></CashRegister>,
           action: async ({ request }) => {
             let obj = Object.fromEntries(await request.formData());
+            let objProductsCart = JSON.parse(obj.productsCart);
             if (obj) {
-              let productsCode = cartProducts.map((product) => {
+              let productsCode = objProductsCart.map((product) => {
                 return product.productCode;
-              })
-              orderData.current.push(
-            
-                {
-                  productsCode: [...productsCode],
-                  totalPrice: priceCalc.current,
-                  orderLocation: obj.location,
-                  ID: obj.id
-              }
-              )
+              });
+              orderData.current.push({
+                productsCode: [...productsCode],
+                totalPrice: priceCalc.current,
+                orderLocation: obj.location,
+                ID: obj.id,
+              });
             }
-          }
+            console.log(orderData.current);
+          },
         },
         {
           path: "shoppingCart",
