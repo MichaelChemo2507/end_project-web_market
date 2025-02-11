@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import CreateTable from "./createTable";
 import "../css/shoppingCart.css";
-import { priceCalcContext, productsCartContext } from "../contexts/contextCreator";
+import { productsCartContext } from "../contexts/contextCreator";
 import { useContext } from "react";
-export default function ShopingCart() {
+export default function ShopingCart({refPriceCalc}) {
   let productsCart = useContext(productsCartContext);
-  let priceCalc = useContext(priceCalcContext);
-  priceCalc.current = 0;
+  refPriceCalc.current = 0;
   if (productsCart[0].length > 0) {
     productsCart[0].forEach((product) => {
-      priceCalc.current += product.price;
+      refPriceCalc.current += Number(product.price);
     });
   }
   return (
@@ -17,14 +16,14 @@ export default function ShopingCart() {
       <div className="CartMainSection">
         <div className="tableSection">
           {productsCart[0].length > 0 ? (
-            <CreateTable></CreateTable>
+            <CreateTable productsCart={productsCart} removeOption={true}></CreateTable>
           ) : (
             <h1>אין פריטים בעגלה</h1>
           )}
         </div>
         <div className="underTableSection">
           <hr />
-          <h3>{priceCalc.current.toFixed(2)} - סהכ </h3>
+          <h3 style={{marginTop:'20px'}}>{refPriceCalc.current.toFixed(2)} - סהכ </h3>
           <Link className="linkToRegister" to="/cashRegister">
             מעבר לקופה
           </Link>

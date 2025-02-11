@@ -1,13 +1,17 @@
+import { useLoaderData } from "react-router-dom";
 import "../css/store.css";
-import { productsData } from "../data/productData";
 import CreateItem from "./createItem";
 export default function Store() {
-  let items = productsData.map((product) => {
+  let refProductsData = useLoaderData();
+  let items;
+  if (refProductsData) { 
+  items = refProductsData.map((product) => {
     return <CreateItem product={product}></CreateItem>;
   });
+ }
   return (
     <>
-      <div className="StoreMainSection">{items}</div>
+      <div className="StoreMainSection">{refProductsData?items:<h2>אין פריטים בחנות</h2>}</div>
     </>
   );
 }
