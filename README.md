@@ -8,7 +8,6 @@ This project is the frontend of a web store, designed to deliver an intuitive an
   - [Product Interface](#product-interface)
   - [Admin Page](#admin-page)
   - [Shopping Cart and Checkout](#shopping-cart-and-checkout)
-- [Features](#features)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -37,15 +36,20 @@ To get started with the WebStore-Frontend, follow these steps:
 
 The project should now be running at http://localhost:3000.
 
-## features
+## Usage
 
-## usage
+Once the app is running locally, you can use the following features:
 
-#### product-interface
+### Product Interface
+The product interface allows users to browse available products. Users can view product details, including images, prices, and descriptions. To add a product to the cart, simply click on the **הוסף לסל** button.
 
-#### admin-page
+### Admin Page
+The admin page allows to add, or edit from the store. To access the admin page, simply click on the **מנהל** button at the navigation bar at the top of the page. The page provides options to adding new products and editing existing ones.
 
-#### shopping-cart-and-checkout
+### Shopping Cart and Checkout
+Users can view their shopping cart at any time by clicking on the **סל קניות** button at the navigation bar at the top-left side of the page. The cart allows users to remove items, or proceed to checkout. During checkout, users will be prompted to enter their ID the and loaction and complete their purchase.
+
+
 
 ## contributing
 
