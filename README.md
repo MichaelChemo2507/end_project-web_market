@@ -27,7 +27,7 @@ To get started with the WebStore-Frontend, follow these steps:
 3. Install the necessary dependencies:
 
    ```bash
-    npm install
+    npm install react-router-dom
    
 4. Start the development server:
 
